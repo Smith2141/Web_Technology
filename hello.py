@@ -4,3 +4,10 @@ def wsgi_application(environ, start_response):
     result = [bytes(i + '\n', 'utf8') for i in environ['QUERY_STRING'].split('&')]
     start_response(status, headers)
     return iter(result)
+
+"""
+git clone https://github.com/Smith2141/Web_Technology.git ./web && cd web && ls -l web
+
+curl -vv 127.0.0.1:8080/?a=b - запрос отправляется напрямую к gunicorn
+curl -vv 127.0.0.1/hello/?a=b - проверяем работает и проксирует ли nginx
+"""
