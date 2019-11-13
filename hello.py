@@ -3,7 +3,7 @@ def wsgi_application(environ, start_response):
     headers = [('Content-Type', 'text/plain')]
     result = [bytes(i + '\n', 'utf8') for i in environ['QUERY_STRING'].split('&')]
     start_response(status, headers)
-    return iter(result)
+    return result
 
 """
 git clone https://github.com/Smith2141/Web_Technology.git ./web && cd web && ls -l web
