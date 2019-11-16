@@ -5,6 +5,6 @@ sudo /etc/init.d/nginx restart
 #sudo rm /etc/gunicorn.d/default 2> /dev/null
 #sudo /etc/init.d/mysql start
 
-sudo gunicorn -c /home/box/web/etc/gunicorn.py hello:wsgi_application
+sudo gunicorn -c /home/box/web/etc/gunicorn.py hello:application
 sudo gunicorn -c /home/box/web/etc/gunicorn-django.py ask.wsgi:application
 sudo /etc/init.d/gunicorn restart

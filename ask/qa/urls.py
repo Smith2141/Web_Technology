@@ -1,5 +1,6 @@
-from ask.qa import views
-urlpatterns = [
-    url(r'^$', views.test())
+from ask.qa.views import test
 
-]
+
+urlpatterns = patterns('ask.qa.views',
+    url(r'^$', test)
+)
