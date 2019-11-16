@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^ask/', include('qa.urls'), name='ask'),
     url(r'^popular/', include('qa.urls'), name='popular'),
     url(r'^new/', include('qa.urls'), name='new'),
+    url(r'^\w+/', include('qa.urls'), name='other'),
 
 ]
