@@ -17,14 +17,13 @@ from django.conf.urls import url, include
 # from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', include('qa.urls'), name='root'),
-    url(r'GET /', include('qa.urls'), name='root2'),
-    url(r'^login/', include('qa.urls'), name='login'),
-    url(r'^signup/', include('qa.urls'), name='signup'),
-    url(r'^question/\d+/', include('qa.urls'), name='question'),
-    url(r'^ask/', include('qa.urls'), name='ask'),
-    url(r'^popular/', include('qa.urls'), name='popular'),
-    url(r'^new/', include('qa.urls'), name='new'),
-    url(r'^\w+/$', include('qa.urls'), name='other'),
+    url(r'^$', 'qa.views.test', name='root'),
+    url(r'^login/', 'qa.views.test', name='login'),
+    url(r'^signup/', 'qa.views.test', name='signup'),
+    url(r'^question/\d+/', 'qa.views.test', name='question'),
+    url(r'^ask/', 'qa.views.test', name='ask'),
+    url(r'^popular/', 'qa.views.test', name='popular'),
+    url(r'^new/', 'qa.views.test', name='new'),
+    url(r'^\S*/', 'qa.views.test', name='other'),
 
 ]
