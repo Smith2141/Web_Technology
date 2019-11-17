@@ -1,7 +1,7 @@
-from django.conf.urls import url
-from ask.qa.views import test
+from django.urls import path
+from .views import test
 
 
-urlpatterns = (
-    url(r'^.*$', test),
-)
+urlpatterns = [
+    path('', test),
+]
