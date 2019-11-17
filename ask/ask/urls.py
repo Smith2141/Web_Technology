@@ -14,16 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.urls import re_path
 # from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', 'qa.views.test', name='root'),
-    url(r'^login/', 'qa.views.test', name='login'),
-    url(r'^signup/', 'qa.views.test', name='signup'),
-    url(r'^question/\d+/', 'qa.views.test', name='question'),
-    url(r'^ask/', 'qa.views.test', name='ask'),
-    url(r'^popular/', 'qa.views.test', name='popular'),
-    url(r'^new/', 'qa.views.test', name='new'),
-    url(r'^\S*/', 'qa.views.test', name='other'),
+    re_path(r'(?P<name>^$)', 'qa.views.test', name='root'),
+    re_path(r'(?P<name>^login)/', 'qa.views.test', name='login'),
+    re_path(r'(?P<name>^signup)/', 'qa.views.test', name='signup'),
+    re_path(r'(?P<name>^question/\d+)/', 'qa.views.test', name='question'),
+    re_path(r'(?P<name>^ask)/', 'qa.views.test', name='ask'),
+    re_path(r'(?P<name>^popular)/', 'qa.views.test', name='popular'),
+    re_path(r'(?P<name>^new)/', 'qa.views.test', name='new'),
+    re_path(r'(?P<name>^\w+)/', 'qa.views.test', name='other'),
 
 ]

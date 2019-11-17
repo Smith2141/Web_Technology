@@ -1,9 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 
 
-def test(request, name, *args, **kwargs):
+def test(request, name):
     if name in ['root', 'login', 'signup', 'question', 'ask',
                 'popular', 'new']:
         return HttpResponse('OK')
     else:
-        return HttpResponse('404')
+        return HttpResponseNotFound('404')
